@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reeds &amp; Keys | Music Lessons in Worcester</title>
+<meta name="description" content="Clarinet, piano, saxophone and flute lessons in Worcester, UK with Emma at Reeds & Keys. In person and online, for children and adults.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* VERSION 5 — Playful bento grid: contact strip on top, tiles, noticeboard of updates */
+  :root {
+    --red: #7f0001;
+    --red-2: #a3141a;
+    --gold: #b7a644;
+    --gold-light: #efe7b8;
+    --gold-ink: #6e6220;
+    --ink: #2a1c1c;
+    --bg: #fbf7ef;
+    --card: #ffffff;
+    --r: 26px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: "Nunito", system-ui, sans-serif; color: var(--ink); font-size: 17px; line-height: 1.6;
+    background: var(--bg) radial-gradient(rgba(127,0,1,.07) 1.5px, transparent 1.5px) 0 0/22px 22px; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: "Baloo 2", system-ui, sans-serif; line-height: 1.05; margin: 0 0 .35em; font-weight: 800; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+
+  /* Contact strip */
+  .strip { background: var(--gold); color: var(--red); font-weight: 700; font-size: .95rem; }
+  .strip .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
+  .strip a { color: var(--red); text-decoration: none; }
+  .strip .pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .strip .pills a { background: rgba(255,255,255,.55); padding: 5px 14px; border-radius: 999px; transition: background .2s; }
+  .strip .pills a:hover { background: #fff; }
+
+  /* Header row with jump chips */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 18px; padding-bottom: 18px; flex-wrap: wrap; }
+  .top img { height: 72px; width: auto; border-radius: 16px; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chips a { text-decoration: none; color: var(--red); font-weight: 700; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--red); transition: all .2s; font-size: .95rem; }
+  .chips a:hover { background: var(--red); color: #fff; }
+
+  /* Bento */
+  .bento { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: minmax(120px, auto); gap: 16px; padding-bottom: 16px; }
+  .tile { border-radius: var(--r); background: var(--card); padding: 28px; position: relative; overflow: hidden; box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 10px 30px rgba(127,0,1,.06); }
+  .tile.red { background: var(--red); color: #fff; }
+  .tile.gold { background: var(--gold); color: var(--red); }
+  .tile.cream { background: var(--gold-light); }
+  .tile.photo { padding: 0; }
+  .tile.photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .tile .tag { display: inline-block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+  .tile.gold .tag, .tile.cream .tag, .tile:not(.red) .tag { background: rgba(127,0,1,.1); color: var(--red); }
+  .tile.red .tag { background: rgba(255,255,255,.16); color: var(--gold-light); }
+
+  .hero-tile { grid-column: span 7; grid-row: span 3; display: flex; flex-direction: column; justify-content: flex-end; min-height: 440px; }
+  .hero-tile h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); }
+  .hero-tile h1 span { color: var(--gold); }
+  .hero-tile p { font-size: 1.2rem; max-width: 36ch; opacity: .95; margin: 0 0 22px; }
+  .hero-tile .notes { position: absolute; top: 18px; right: 26px; font-size: 6rem; color: rgba(183,166,68,.35); line-height: 1; transform: rotate(12deg); }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--red); font-weight: 800; font-family: "Baloo 2", sans-serif; font-size: 1.1rem; text-decoration: none; padding: 12px 22px; border-radius: 999px; transition: transform .15s; }
+  .btn:hover { transform: scale(1.04) rotate(-1deg); }
+  .btn.white { background: #fff; }
+
+  .emma-tile { grid-column: span 5; grid-row: span 3; min-height: 440px; }
+  .emma-tile img { object-position: center 25%; }
+  .emma-tile .bubble { position: absolute; left: 18px; bottom: 18px; right: 18px; background: #fff; border-radius: 20px; padding: 14px 18px; font-weight: 700; box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+  .emma-tile .bubble b { color: var(--red); font-family: "Baloo 2", sans-serif; font-size: 1.3rem; display: block; line-height: 1.1; }
+
+  .price-tile { grid-column: span 3; grid-row: span 2; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+  .price-tile .amt { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 5rem; line-height: .9; }
+  .price-tile p { margin: 6px 0 0; font-weight: 700; }
+
+  .instr-tile { grid-column: span 3; display: flex; align-items: center; gap: 16px; transition: transform .2s; }
+  .instr-tile:hover { transform: translateY(-4px) rotate(-.5deg); }
+  .instr-tile .ico { flex: none; width: 58px; height: 58px; border-radius: 18px; background: var(--gold-light); display: grid; place-items: center; }
+  .instr-tile svg { width: 36px; height: 36px; fill: none; stroke: var(--red); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .instr-tile h3 { margin: 0; font-size: 1.5rem; color: var(--red); }
+  .instr-tile p { margin: 0; font-size: .9rem; color: #6b5b5b; }
+
+  .about-tile { grid-column: span 6; }
+  .about-tile h2 { font-size: 2.2rem; color: var(--red); }
+  .perks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .perks span { background: var(--bg); border: 2px dashed var(--gold); border-radius: 999px; padding: 4px 14px; font-weight: 700; font-size: .92rem; }
+
+  .banner-tile { grid-column: span 12; min-height: 240px; }
+  .banner-tile img { object-position: center 60%; }
+  .banner-tile .over { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(127,0,1,.85), rgba(127,0,1,0) 70%); display: flex; align-items: center; padding: 30px 40px; }
+  .banner-tile h2 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); max-width: 14ch; margin: 0; }
+
+  /* Reviews as speech bubbles */
+  .section-title { display: flex; align-items: center; gap: 14px; margin: 40px 0 20px; }
+  .section-title h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--red); margin: 0; }
+  .section-title::after { content: ""; flex: 1; height: 4px; border-radius: 4px; background: repeating-linear-gradient(90deg, var(--gold) 0 14px, transparent 14px 22px); }
+  .speech { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .say { background: #fff; border-radius: var(--r); padding: 26px; position: relative; box-shadow: 0 10px 30px rgba(127,0,1,.07); margin-bottom: 30px; }
+  .say::after { content: ""; position: absolute; left: 40px; bottom: -18px; border: 18px solid transparent; border-top-color: #fff; border-bottom: 0; }
+  .say:nth-child(2) { background: var(--gold-light); } .say:nth-child(2)::after { border-top-color: var(--gold-light); }
+  .say p { margin: 0 0 8px; }
+  .say .who { position: absolute; bottom: -52px; left: 20px; display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--red); font-family: "Baloo 2", sans-serif; font-size: 1.1rem; }
+  .say .who i { width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: var(--gold); display: grid; place-items: center; font-style: normal; font-size: 1rem; }
+  .speech-wrap { padding-bottom: 40px; }
+
+  /* Noticeboard */
+  .board { background: #8a5a36 linear-gradient(135deg, #9a6a44, #7c4f2e); border-radius: var(--r); padding: 36px 28px; border: 10px solid #5e3a1f; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .note { background: #fffbe0; padding: 22px 18px 18px; box-shadow: 0 8px 14px rgba(0,0,0,.25); position: relative; font-size: .98rem; }
+  .note::before { content: ""; position: absolute; top: -8px; left: 50%; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ff6b6b, var(--red)); box-shadow: 0 2px 3px rgba(0,0,0,.35); }
+  .note:nth-child(1) { transform: rotate(-2deg); }
+  .note:nth-child(2) { transform: rotate(1.5deg); background: #fff; }
+  .note:nth-child(3) { transform: rotate(-1deg); background: var(--gold-light); }
+  .note:nth-child(4) { transform: rotate(2deg); }
+  .note h3 { font-family: "Caveat", cursive; font-size: 1.7rem; color: var(--red); font-weight: 600; margin-bottom: 6px; }
+  .note p { margin: 0; }
+  .note img { width: 100%; height: 150px; object-fit: cover; margin-bottom: 12px; }
+  .note.polaroid { padding: 10px 10px 16px; background: #fff; }
+  .note.polaroid p { font-family: "Caveat", cursive; font-size: 1.4rem; text-align: center; color: var(--ink); }
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .before-after img { height: 150px; margin: 0; }
+
+  /* Footer CTA */
+  .cta { margin: 40px 0 24px; background: var(--red); color: #fff; border-radius: var(--r); padding: 50px 30px; text-align: center; position: relative; overflow: hidden; }
+  .cta h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+  .cta h2 span { color: var(--gold); }
+  .cta p { max-width: 50ch; margin: 0 auto 26px; opacity: .92; }
+  .cta .btns { justify-content: center; }
+  .cta::before, .cta::after { content: "♪"; position: absolute; font-size: 9rem; color: rgba(183,166,68,.18); line-height: 1; }
+  .cta::before { left: 4%; top: 10%; transform: rotate(-15deg); }
+  .cta::after { content: "♫"; right: 4%; bottom: 0; transform: rotate(12deg); }
+  footer { text-align: center; padding: 10px 20px 30px; font-size: .9rem; color: #7c6a6a; }
+
+  @media (max-width: 1000px) {
+    .hero-tile, .emma-tile { grid-column: span 12; }
+    .emma-tile { min-height: 520px; }
+    .bento { grid-auto-flow: dense; }
+    .price-tile { grid-column: span 12; grid-row: auto; }
+    .instr-tile { grid-column: span 6; }
+    .about-tile { grid-column: span 12; }
+    .speech { grid-template-columns: 1fr; gap: 60px; }
+    .board { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .price-tile, .instr-tile, .about-tile { grid-column: span 12; }
+    .hero-tile { min-height: 0; }
+    .tile { padding: 24px; }
+    .board { grid-template-columns: 1fr; padding: 28px 18px; }
+    .top { justify-content: center; }
+    .chips { justify-content: center; }
+    .strip .wrap { justify-content: center; }
+    .strip .where { display: none; }
+    .banner-tile .over { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="where">📍 Worcester, UK · Lessons in person &amp; online</span>
+    <div class="pills">
+      <a href="tel:+447542926914">📞 07542 926914</a>
+      <a href="mailto:reedsandkeysmusic@gmail.com">✉️ reedsandkeysmusic@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<header class="wrap top">
+  <img src="images/logo-wide.jpg" alt="Reeds &amp; Keys">
+  <nav class="chips" aria-label="Page sections">
+    <a href="#lessons">Lessons</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#news">Noticeboard</a>
+    <a href="#book">Book</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="bento" id="lessons">
+    <section class="tile red hero-tile">
+      <span class="notes" aria-hidden="true">♫</span>
+      <span class="tag">Now booking · lots of availability</span>
+      <h1>Start your <span>music journey</span> today!</h1>
+      <p>Fun, friendly clarinet, piano, saxophone and flute lessons for children and grown-ups in Worcester.</p>
+      <div class="btns">
+        <a class="btn" href="tel:+447542926914">📞 Call me</a>
+        <a class="btn white" href="sms:+447542926914">💬 Send a text</a>
+      </div>
+    </section>
+
+    <div class="tile photo emma-tile">
+      <img src="images/Emma_profile_pic.jpg" alt="Emma smiling and holding a clarinet">
+      <div class="bubble"><b>Hi, I'm Emma! 👋</b>Your teacher at Reeds &amp; Keys</div>
+    </div>
+
+    <div class="tile gold price-tile">
+      <span class="tag" style="align-self:center">Lessons from</span>
+      <div class="amt">£18</div>
+      <p>for a 30 minute lesson</p>
+    </div>
+
+    <div class="tile instr-tile">
+      <div class="ico"><svg viewBox="0 0 36 36"><path d="M27 4 12 26"/><path d="M12 26l-4 7 6-4.5z"/><circle cx="21" cy="13" r=".8"/><circle cx="18" cy="17.5" r=".8"/></svg></div>
+      <div><h3>Clarinet</h3><p>Beginner to grades</p></div>
+    </div>
+    <div class="tile instr-tile">
+      <div class="ico"><svg viewBox="0 0 36 36"><rect x="4" y="7" width="28" height="22" rx="2"/><path d="M11 7v22M18 7v22M25 7v22"/><path d="M11 7v11M18 7v11M25 7v11" stroke-width="4"/></svg></div>
+      <div><h3>Piano</h3><p>Reading &amp; technique</p></div>
+    </div>
+    <div class="tile instr-tile">
+      <div class="ico"><svg viewBox="0 0 36 36"><path d="M8 5h6l2 2v16a6 6 0 0 0 12 0v-3"/><path d="M24 19h7"/><path d="M5 4l3 1"/></svg></div>
+      <div><h3>Saxophone</h3><p>Tone &amp; confidence</p></div>
+    </div>
+
+    <div class="tile cream about-tile">
+      <span class="tag">About lessons</span>
+      <h2>Calm, patient &amp; encouraging</h2>
+      <p>Whether you're brand new, working through your grades, or rescuing a dusty instrument from the loft, lessons are built around you. I also play with the Bardi Wind Orchestra, so there's always a good story from the band room!</p>
+      <div class="perks"><span>👧 Kids</span><span>🧑 Adults</span><span>💻 Online</span><span>🏠 In person</span><span>📚 Theory</span><span>🎷 Instrument hire</span></div>
+    </div>
+    <div class="tile instr-tile">
+      <div class="ico"><svg viewBox="0 0 36 36"><path d="M4 31 32 6"/><circle cx="14" cy="22" r=".8"/><circle cx="18" cy="18.5" r=".8"/><circle cx="22" cy="15" r=".8"/><circle cx="26" cy="11.5" r=".8"/></svg></div>
+      <div><h3>Flute</h3><p>Young players &amp; adults</p></div>
+    </div>
+
+    <div class="tile photo banner-tile">
+      <img src="images/Assortment_of_wind_instruments.jpg" alt="Clarinets, a flute and a saxophone across a piano keyboard" loading="lazy">
+      <div class="over"><h2>No instrument? Rent one of mine! 🎶</h2></div>
+    </div>
+  </div>
+
+  <div class="section-title" id="reviews"><h2>Happy students 💬</h2></div>
+  <div class="speech-wrap">
+    <div class="speech">
+      <div class="say"><p>“Emma’s a brilliant music teacher. She is really calm, patient and encouraging. She’s taught my daughter flute and piano for a few years and has supported her to both enjoy music and progress through her grades. I highly recommend Emma for both children and adults.”</p><div class="who"><i>SJ</i>Sabrina Jackson</div></div>
+      <div class="say"><p>“Emma is very patient with mature learners. She makes the lessons engaging and age appropriate. I found her online lessons really suited me.”</p><div class="who"><i>JB</i>Jenny Butlin</div></div>
+      <div class="say"><p>“Emma was a fantastic teacher from the moment I walked in. She made the lessons very approachable and broke it down when I was struggling with my embouchure. Would fully recommend for new students and progressing players!! 👍✌”</p><div class="who"><i>LC</i>Luke Cotterill</div></div>
+    </div>
+  </div>
+
+  <div class="section-title" id="news"><h2>Noticeboard 📌</h2></div>
+  <div class="board">
+    <div class="note"><h3>I'm back!!! 🎵</h3><p>Back to teaching after maternity leave, with plenty of availability starting right away. Ready to learn something new?</p></div>
+    <div class="note polaroid"><img src="images/Sheet_music_on_stand.jpg" alt="Orchestra sheet music on a stand" loading="lazy"><p>Cantina Band with Bardi Wind Orchestra ✨</p></div>
+    <div class="note polaroid"><div class="before-after"><img src="images/repair_before.jpg" alt="Worn clarinet tenon cork" loading="lazy"><img src="images/repair_after.jpg" alt="Replaced clarinet tenon cork" loading="lazy"></div><p>Before &amp; after: a new tenon cork</p></div>
+    <div class="note polaroid"><img src="images/Child_playing_sax.jpg" alt="A toddler holding a saxophone" loading="lazy" style="object-position:center 20%"><p>Never too young to start! 🎷</p></div>
+  </div>
+
+  <section class="cta" id="book">
+    <h2>Let's make some <span>music!</span></h2>
+    <p>Just message me for more details, or give me a call. Lots of availability and flexibility, and instruments to rent if you don't have one yet.</p>
+    <div class="btns">
+      <a class="btn" href="tel:+447542926914">📞 07542 926914</a>
+      <a class="btn white" href="mailto:reedsandkeysmusic@gmail.com">✉️ Email me</a>
+    </div>
+  </section>
+</main>
+<footer>© <span id="yr"></span> Reeds &amp; Keys · Instrumental teacher in Worcester, UK</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

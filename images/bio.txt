@@ -1,0 +1,46 @@
+[
+{
+	image_name: Advertisement_poster.jpg, 
+		description: Poster that includes the Reeds & Keys logo, with images of Clarinet, Saxophone, Flute and Piano, stating that lessons are available and to book now. 18 Pounds (Sterling) for a 30 minute session. 
+},
+{
+	image_name: Assortment_of_wind_instruments.jpg
+	description: image displays an assortment of wind instruments laying across a keyboard. Potential to be a good banner image if overlayed given the dimensions. 
+},
+{
+	image_name: Child_playing_sax.jpg
+	description: 1 year old child with a saxophone in her mouth. 
+},
+{
+	image_name:Clarinet_with_sheet_music.jpg
+	description: Clarinet laying across sheet music. Title of sheet music reads Solo Bb Clarinet.
+},
+{
+	image_name: Emma_profile_pic.jpg
+	description: Picture shows Emma, the primary teacher at Reeds and Keys, smiling and holding a clarinet. 
+}.
+{
+	image_name: keyboard_with_sheet_music.jpg,
+	description: keyboard with sheet music
+},
+{
+	image_name: Keyboard.jpg
+	description: Keyboard
+},
+{
+image_name: logo.jpg,
+description: Reeds and Keys Logo. Shows a Clarinet and Flute over a keyboard with the words Reeds & Keys.
+},
+{
+image_name: repair_after.jpg,
+description: Image shows the cork of a clarinet that has been repaired.
+},
+{
+image_name: repair_before.jpg
+description: Image shows the worn corn of a clarinet that is cracking and torn. 
+},
+{
+image_name: Sheet_music_on_stand.jpg
+description: Shows sheet music on a stand about to be played as part of an orchestra. 
+}
+]
