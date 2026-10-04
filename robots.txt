@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reeds-and-keys.devrobbins.com/sitemap.xml
