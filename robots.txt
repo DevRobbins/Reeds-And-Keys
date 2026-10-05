@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reeds-and-keys.devrobbins.com/sitemap.xml
+Sitemap: https://www.reedsandkeysmusic.co.uk/sitemap.xml
